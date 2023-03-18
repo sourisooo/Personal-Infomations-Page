@@ -1,7 +1,8 @@
 import { useState,useEffect } from "react";
 import { useObject } from "../Hooks/useObject";
 import Accountpage from "./Accountpage";
-
+import ProfilPage from "./Profilpage";
+import { Link } from 'react-router-dom'
 
 
 export default function Navbar() {
@@ -28,24 +29,29 @@ export default function Navbar() {
 console.log(select);
 
 
-// if(select!="")return {select};
 
 
 return (
 
 <div>
 
+           
+
 <form>
-          <label for="opinion"> Select an ID </label><br /> 
+          <label for="opinion"> Select an ID and press Enter</label><br /> 
           <textarea id="opinion" rows="1" cols="80" value={select} onChange={e=>setSelect(e.target.value)}></textarea>
           <br /> <br /> 
           
           </form>
 
 
-<Accountpage select={select} ></Accountpage>
+          <Accountpage select={select} ></Accountpage>
+
+          <Link to={`/profile/${select}`}>Click here to check your profile (press Control and left click)</Link>
 
 </div>
+
+
 
 );
 

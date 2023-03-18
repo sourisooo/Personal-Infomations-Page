@@ -5,19 +5,36 @@ import Navbar from './Navbar';
 
 export default function Accountpage(props) {
 
-const [name,setName] = useState("BIDON");
+const [name,setName] = useState("Bidon");
 const [bname,setBName] = useState("Modify this information");
 const [email,setEmail] = useState("mailbidon");
 const [adress,setAdress] = useState("adressbidon");
-const [go,setGo] = useState("gobidon");
 
-const {object} = useObject(1);
+
+const {object} = useObject(props.select);
+const [obj,setObj] = useState("");
 
 
 useEffect(()=> {
   console.log(props.select);
 
+  
+  fetch("http://localhost:3000/datas/"+parseInt(props.select))
+  .then(response =>  response.json())
+  // .then(e => console.log(e) )
+  .then(e=> setObj(e))
+
+  // console.log(datas,datas.at(0),datas.at(0).name);
+  console.log(obj,obj.name,obj.address);
+
+  setName(obj.name);
+  setEmail(obj.email);
+  setAdress(JSON.stringify((obj.address)));
+
+
+
  },[props.select]);
+
 
 
 let bouton = "Modify this information";
@@ -37,7 +54,7 @@ console.log(index);
 const handleChange = () =>
 
 {
-    
+
 
   // console.log(name,bouton,bouton2);
     document.getElementById("1").disabled = !document.getElementById("1").disabled;
@@ -52,11 +69,6 @@ const handleChange = () =>
     
  
 
-
-    // useEffect(()=> {
-   
-   
-
   fetch("http://localhost:3000/datas/"+index, 
   
       {
@@ -65,7 +77,7 @@ const handleChange = () =>
     body: JSON.stringify(data)
       })
 
-    // },[]);
+
    
  
 }
@@ -119,27 +131,7 @@ const handleChange3 = () =>
 
 }
 
-const handleChange4 = () =>
 
-{
-  // console.log(name,bouton,bouton2);
-    document.getElementById("4").disabled = !document.getElementById("4").disabled;
-    if(!document.getElementById("4").disabled){setBName(bouton2)}else(setBName(bouton));
-    // console.log(name,bouton,bouton2);
-
-    data={go}
-
-    console.log(data);
-
-  fetch("http://localhost:3000/datas/"+index, 
-  
-      {
-    method: 'PATCH',
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data)
-      })
-
-}
 
 
     return(
@@ -181,18 +173,6 @@ const handleChange4 = () =>
         <button onClick={handleChange3}>{bname}</button> 
         <br /> <br /> 
     
-
-        <form>
-    
-    <label for="opinion"> Your go </label><br /> 
-      <textarea id="4" rows="1" cols="80" value={go} onChange={e=>setGo(e.target.value)}disabled="true"></textarea>
-      <br /> <br /> 
-    
-    </form>
-
-    <button onClick={handleChange4}>{bname} </button> 
-    <br /> <br /> 
-
 
 
 

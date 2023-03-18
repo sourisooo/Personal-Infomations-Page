@@ -1,10 +1,12 @@
+
 {
-  "datas": [
+"datas":
+[
     {
       "id": 1,
-      "name": "BIDONmodif",
+      "name": "Leanne Graham",
       "username": "Bret",
-      "email": "mailbidon",
+      "email": "Sincere@april.biz",
       "address": {
         "street": "Kulas Light",
         "suite": "Apt. 556",
@@ -21,13 +23,11 @@
         "name": "Romaguera-Crona",
         "catchPhrase": "Multi-layered client-server neural-net",
         "bs": "harness real-time e-markets"
-      },
-      "adress": "adressbidon",
-      "go": "gobidon"
+      }
     },
     {
       "id": 2,
-      "name": "modif2",
+      "name": "Ervin Howell",
       "username": "Antonette",
       "email": "Shanna@melissa.tv",
       "address": {
@@ -50,7 +50,7 @@
     },
     {
       "id": 3,
-      "name": "modif2",
+      "name": "Clementine Bauch",
       "username": "Samantha",
       "email": "Nathan@yesenia.net",
       "address": {
@@ -96,9 +96,9 @@
     },
     {
       "id": 5,
-      "name": "vmodifnumero5?",
+      "name": "Chelsey Dietrich",
       "username": "Kamren",
-      "email": "mailbidon5?",
+      "email": "Lucio_Hettinger@annie.ca",
       "address": {
         "street": "Skiles Walks",
         "suite": "Suite 351",
@@ -115,9 +115,7 @@
         "name": "Keebler LLC",
         "catchPhrase": "User-centric fault-tolerant solution",
         "bs": "revolutionize end-to-end systems"
-      },
-      "adress": "adressbidon5?",
-      "go": "gobidon5??"
+      }
     },
     {
       "id": 6,
@@ -234,5 +232,4 @@
         "bs": "target end-to-end models"
       }
     }
-  ]
-}
+  ]}
